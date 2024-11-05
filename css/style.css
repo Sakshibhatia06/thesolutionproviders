@@ -5,7 +5,9 @@
     --light: #F6F4F9;
     --dark: #04000B;
 }
-
+.margin{
+    margin-left: 6px;
+}
 .bi{
     font-size: 40px;
 }
