@@ -6,7 +6,9 @@
     --dark: #04000B;
 }
 
-
+.bi{
+    font-size: 40px;
+}
 /*** Spinner ***/
 #spinner {
     opacity: 0;
