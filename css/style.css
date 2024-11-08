@@ -11,7 +11,13 @@
 .margin{
     margin-left: 6px;
 }
-
+.btn1{
+    background-color: red;
+}
+/* Active link styling */
+.nav-item.nav-link.active {
+    color: #4751bd !important;  /* White text color for contrast */
+}
 /*** Spinner ***/
 #spinner {
     opacity: 0;
