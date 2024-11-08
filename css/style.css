@@ -11,8 +11,24 @@
 .margin{
     margin-left: 6px;
 }
+.carousel-item .row {
+    align-items: center;
+}
+
+.carousel-item .text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.marT {
+    margin-top: 20px; /* Adjust if needed */
+}
+
 .btn1{
-    background-color: red;
+    background-color: red !important;
 }
 /* Active link styling */
 .nav-item.nav-link.active {
