@@ -48,7 +48,7 @@
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
+                <a href="#" class="navbar-brand p-0">
                     <h1 class="m-0"><img src="./img/logo1-removebg-preview.png"></h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -64,22 +64,22 @@
                     </div>
                 </div>                      
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" target="_blank"
+                    <a class="btn btn1 btn-outline-light btn-social" target="_blank"
                         href="https://youtube.com/@thesolutionproviders9165?si=x69HWFy9DcHMDG1Z"><i
                             class="fab fa-youtube"></i></a>
-                    <a class="margin btn btn-outline-light btn-social" target="_blank"
+                    <a class="margin btn1 btn btn-outline-light btn-social" target="_blank"
                         href="https://www.facebook.com/share/R5gsL1asZnhXSsL6/"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="margin btn btn-outline-light btn-social" target="_blank"
+                    <a class="margin btn1 btn btn-outline-light btn-social" target="_blank"
                         href="https://www.instagram.com/thesolutionproviders"><i
                             class="fab fa-instagram"></i></a>
-                    <a class="margin btn btn-outline-light btn-social" target="_blank"
+                    <a class="margin btn1 btn btn-outline-light btn-social" target="_blank"
                         href="https://www.linkedin.com/company/thesolutionproviders/"><i
                             class="fab fa-linkedin-in"></i></a>
                 </div>
             </nav>
 
-            <div id="heroCarousel" class="carousel slide container-xxl bg-primary hero-header" data-bs-ride="carousel">
+            <div id="heroCarousel" class="Container1 carousel slide container-xxl bg-primary hero-header" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <!-- Carousel Item 1 -->
                     <div class="carousel-item active">
@@ -177,7 +177,7 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5" id="about1">
+        <div class="container-xxl Container1 py-5" id="about1">
             <div class="container py-5 px-lg-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -268,7 +268,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                         <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">35</h1>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">50</h1>
                         <p class="text-white mb-0">Completed Projects</p>
                     </div>
                 </div>
@@ -278,7 +278,7 @@
 
 
         <!-- Service Start -->
-        <div class="container-xxl py-5" id="service1">
+        <div class="container-xxl Container1 py-5" id="service1">
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-secondary justify-content-center"><span></span>Our
@@ -377,7 +377,7 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5 wow fadeInUp" id="project1" data-wow-delay="0.1s">
+        <div class="container-xxl Container1 py-5 wow fadeInUp" id="project1" data-wow-delay="0.1s">
             <section class="container py-5">
                 <div class="text-center mb-5">
                     <h2 class="display-5 fw-bold">Why Select Us</h2>
@@ -573,7 +573,7 @@
 
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s" id="contact1">
+        <div class="container-fluid Container1 bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s" id="contact1">
             <div class="container py-5 px-lg-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
@@ -626,12 +626,33 @@
         <a href="#" class="btn btn1 btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
     <script>
-function setActive(element) {
-    document.querySelectorAll('.nav-item.nav-link').forEach(link => {
-        link.classList.remove('active');
-    });
-    element.classList.add('active');
+        const sections = document.querySelectorAll(".Container1");
+const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+function setActiveOnScroll() {
+    let index = sections.length;
+    
+    // Loop through each section to find the current section in view
+    while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+    // Remove 'active' class from all nav items
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    // Add 'active' class to the corresponding nav item
+    navLinks[index].classList.add("active");
 }
+
+// Call the function on scroll
+window.addEventListener("scroll", setActiveOnScroll);
+
+// Add 'active' class on click
+navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+        navLinks.forEach((item) => item.classList.remove("active"));
+        link.classList.add("active");
+    });
+});
+
     </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
